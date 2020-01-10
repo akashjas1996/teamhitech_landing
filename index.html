@@ -13,6 +13,26 @@
 	<link rel="stylesheet" type="text/css" href="dist/fullpage.css" />
 	<link rel="stylesheet" type="text/css" href="examples/examples.css" />
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="mdb/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="mdb/css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="mdb/css/style.min.css" rel="stylesheet">
+  <style type="text/css">
+    @media (min-width: 800px) and (max-width: 850px) {
+      .navbar:not(.top-nav-collapse) {
+        background: #1C2331 !important;
+      }
+    }
+
+    .br{
+      border:1px solid black;
+    }
+
+  </style>
+
 	<!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
@@ -81,18 +101,32 @@
 		<p style="color: grey">#UseTheNet</p>
 	
 	</div>
-	<div class="section" id="section1">
+
+
+
+	<div class="section br" id="section1">
 		<div class="intro">
 			<!-- <img src="examples/imgs/1.png" alt="Cool" /> -->
-			<h1>Don't you agree?</h1>
+			<!-- <h1>Don't you agree?</h1> -->
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <img width="100%" src="img/work.png">
+          </div>
+        </div>
+      </div>
 			<!-- <p>This example is working with `easeOutBack` effect instead of the default</p> -->
 			<!-- <p>You can see more about them <a href="http://jqueryui.com/resources/demos/effect/easing.html" target="_blank">here</a></p> -->
 		</div>
 	</div>
+
+
+
 	<div class="section" id="section2">
 		<div class="intro">
 			<h1>Cool !</h1>
-			<p>You, will!</p>
+			<p>something Good is cooking!</p>
 		</div>
 	</div>
 </div>
@@ -101,7 +135,7 @@
 <script type="text/javascript" src="examples/examples.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-        sectionsColor: ['#000000', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+        sectionsColor: ['#00000A', '#000000', '#7BAABE', 'whitesmoke', '#ccddff'],
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
 
@@ -109,6 +143,21 @@
         easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)'
     });
 </script>
+
+
+  <script type="text/javascript" src="mdb/js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="mdb/js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="mdb/js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="mdb/js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+
+  </script>
 
 </body>
 </html>
