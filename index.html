@@ -12,7 +12,7 @@
 
 	<link rel="stylesheet" type="text/css" href="dist/fullpage.css" />
 	<link rel="stylesheet" type="text/css" href="examples/examples.css" />
-
+  <link rel="shortcut icon" href="img/logo.png"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="mdb/css/bootstrap.min.css" rel="stylesheet">
@@ -27,8 +27,14 @@
       }
     }
 
+     @media (max-width: 800px) {
+     .img_work{
+      width: 100%;
+     }
+    }
+
     .br{
-      border:1px solid black;
+      border:1px solid red;
     }
 
   </style>
@@ -104,19 +110,19 @@
 
 
 
-	<div class="section br" id="section1">
+	<div class="section" id="section1">
 		<div class="intro">
 			<!-- <img src="examples/imgs/1.png" alt="Cool" /> -->
 			<!-- <h1>Don't you agree?</h1> -->
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
-            <img width="100%" src="img/work.png">
+            <center><img class="img_work" width="60%" src="img/work.png"></center>
           </div>
         </div>
       </div>
-			<!-- <p>This example is working with `easeOutBack` effect instead of the default</p> -->
+			<p style="color: grey">Take your business online</p>
 			<!-- <p>You can see more about them <a href="http://jqueryui.com/resources/demos/effect/easing.html" target="_blank">here</a></p> -->
 		</div>
 	</div>
@@ -125,8 +131,24 @@
 
 	<div class="section" id="section2">
 		<div class="intro">
-			<h1>Cool !</h1>
-			<p>something Good is cooking!</p>
+			<h1 style="font-size: 3vw; font-weight: bold">Proud Partners</h1>
+      <div class="container">
+			<div class="row"> 
+       
+         <div style="padding: 40px; padding-top: 65px" class="col-lg-4">
+          <img width="100%" src="img/gd-guides.svg">
+        </div>
+
+         <div style="padding: 40px" class="col-lg-4">
+          <img width="100%" src="img/Hostinger.png">
+        </div>
+
+         <div style="padding: 40px" class="col-lg-4">
+          <img width="100%" src="img/msg-logo-blue.svg">
+        </div>
+
+      </div>
+    </div>
 		</div>
 	</div>
 </div>
