@@ -29,9 +29,17 @@
 
      @media (max-width: 800px) {
      .img_work{
-      width: 100%;
+      width: 100% !important;
      }
     }
+
+   @media only screen and (min-device-width: 480px){
+
+     .img_work{
+      width: 100%;
+     }
+
+   }
 
     .br{
       border:1px solid red;
@@ -118,7 +126,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12">
-            <center><img class="img_work" width="60%" src="img/work.png"></center>
+            <center><img class="img_work" style="width: 60%" src="img/work.png"></center>
           </div>
         </div>
       </div>
