@@ -3,23 +3,55 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Easing - fullPage.js</title>
+	<title>Callbacks - fullPage.js</title>
 	<meta name="author" content="Alvaro Trigo Lopez" />
-	<meta name="description" content="fullPage demo easing effect." />
-	<meta name="keywords"  content="fullpage,jquery,demo,easing,effect,jqueui" />
+	<meta name="description" content="fullPage callback function." />
+	<meta name="keywords"  content="fullpage,jquery,demo,callbac,function,event" />
 	<meta name="Resource-type" content="Document" />
 
 
-	<link rel="stylesheet" type="text/css" href="dist/fullpage.css" />
-	<link rel="stylesheet" type="text/css" href="examples/examples.css" />
+	<link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
 
 	<!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
 		</script>
 	<![endif]-->
+
+	<style>
+		#section2 img{
+			left: 130%;
+			position:relative;
+      transition: all 600ms ease;
+		}
+		#section2 p{
+			opacity: 0;
+      transition: all 600ms ease;
+		}
+		#section3 .intro{
+			left: -130%;
+			position:relative;
+      transition: all 600ms ease;
+		}
+
+    #section3 .intro{
+      left: -130%;
+      position:relative;
+      transition: all 600ms ease;
+    }
+
+    /**
+    * Here we fire the animation for section 3.
+    * As the fp-viewing class in the body changes on each section and slide.
+    */
+    body.fp-viewing-3rdPage #section3 .intro{
+       left: 0%;
+    }
+	</style>
 </head>
 <body>
+
 
 <select id="demosMenu">
   <option selected>Choose Demo</option>
@@ -74,20 +106,22 @@
 </ul>
 
 <div id="fullpage">
-	<div class="section " id="section0">
-		<h1>fullPage.js</h1>
-		<p>Configure the CSS3 easing effect!</p>
-		<img src="examples/imgs/fullPage.png" alt="fullPage" />
-	</div>
-	<div class="section" id="section1">
-		<div class="intro">
-			<img src="examples/imgs/1.png" alt="Cool" />
-			<h1>easeOutBack</h1>
-			<p>This example is working with `easeOutBack` effect instead of the default</p>
-			<p>You can see more about them <a href="http://jqueryui.com/resources/demos/effect/easing.html" target="_blank">here</a></p>
-		</div>
+	<div class="section " id="section1">
+    <div class="intro">
+  		<h1>Animations</h1>
+  		<p>You can make use of <a href="https://github.com/alvarotrigo/fullPage.js#callbacks" target="_blank">callbacks</a> or <a href="https://github.com/alvarotrigo/fullPage.js#state-classes-added-by-fullpagejs" target="_blank">state classes</a> to fire animations.</p>
+  		<p>See my video tutorial regarding how to create css3 animations too!</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/qiCVPpI9l3M" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 	</div>
 	<div class="section" id="section2">
+		<div class="intro">
+			<img src="imgs/1.png" alt="Cool" />
+			<h1>From the callbacks</h1>
+			<p>Animation fired through fullPage.js callbacks, making use of css3 transitions.</p>
+		</div>
+	</div>
+	<div class="section" id="section3">
 		<div class="intro">
 			<h1>Cool uh?</h1>
 			<p>Choose the best easing effect for your site!</p>
@@ -95,16 +129,29 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="dist/fullpage.js"></script>
-<script type="text/javascript" src="examples/examples.js"></script>
+<script type="text/javascript" src="../dist/fullpage.js"></script>
+<script type="text/javascript" src="examples.js"></script>
 <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
         sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
         menu: '#menu',
+        afterLoad: function(origin, destination, direction){
+            //section 2
+            if(destination.index == 1){
+                document.querySelector('#section2').querySelector('img').style.left = 0 + 'px';
+                document.querySelector('#section2').querySelector('p').style.opacity = 1;
+            }
 
-        //equivalent to jQuery `easeOutBack` extracted from http://matthewlein.com/ceaser/
-        easingcss3: 'cubic-bezier(0.175, 0.885, 0.320, 1.275)'
+            //back to original state
+            else if(origin && origin.index == 1){
+                document.querySelector('#section2').querySelector('img').style.left = 130 + '%';
+                document.querySelector('#section2').querySelector('p').style.opacity = 0;
+            }
+
+            //section 3 is using the state classes to fire the animation
+            //see the CSS code above!
+        }
     });
 </script>
 
