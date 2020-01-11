@@ -166,7 +166,7 @@
       <div class="container-fluid">
         <div class="row work_image">
           <div class="col-lg-12 col-12">
-            <center><img class="img_work" src="img/work.webp"></center>
+            <center><img class="img_work lazyload" data-src="img/work.webp"></center>
           </div>
         </div>
       </div>
@@ -191,17 +191,17 @@
           <img width="100%" src="img/gd-guides.svg">
         </div>
 
-         <div style="padding: 10px" class="col-lg-3 col-3">
-          <img width="100%" src="img/Hostinger.png">
+         <div style="padding: 10px" class="col-lg-3 col-3 lazyload">
+          <img width="100%" data-src="img/Hostinger.png">
         </div>
 
-         <div style="padding: 10px" class="col-lg-3 col-3">
-          <img width="100%" src="img/msg-logo-blue.svg">
+         <div style="padding: 10px" class="col-lg-3 col-3 lazyload">
+          <img width="100%" data-src="img/msg-logo-blue.svg">
         </div>
 
 
- <div style="padding: 10px" class="col-lg-3 col-3">
-          <img width="80%" src="img/edx-logo.webp">
+ <div style="padding: 10px" class="col-lg-3 col-3 lazyload">
+          <img width="80%" data-src="img/edx-logo.webp">
         </div>
 
       </div>
@@ -346,6 +346,8 @@ else if(document.getElementById('oneyeopen').style.visibility=="visible"){
  </script>
 <!-- Disable special keys and right click end -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'/>
-
+  <script src="lazysizes.min.js" async></script>
+  <!-- Images End -->
+</body>
 </body>
 </html>
